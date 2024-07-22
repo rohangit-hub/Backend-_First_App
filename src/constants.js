@@ -1,4 +1,4 @@
-export const DB_NAME = "rohanDB"
+export const DBNAME = "rohanDB"
 
 
 
