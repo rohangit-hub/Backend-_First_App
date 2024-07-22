@@ -1,4 +1,4 @@
-export const DB_NAME = "backend"
+export const DB_NAME = "rohanDB"
 
 
 

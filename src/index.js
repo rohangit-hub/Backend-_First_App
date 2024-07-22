@@ -1,4 +1,4 @@
-import connectionDB from "../src/db"
+import { connectionDB } from "./db/db.js";
 
 
 connectionDB()
