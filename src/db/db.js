@@ -14,12 +14,13 @@ dotenv.config({
 const connectionDB = async ()=> {
 
     try {
-        const connectionString = await mongoose.connect(`${process.env.DB_CONNECTION}/${DBNAME}`)  // connection string
+        // const connectionString = await mongoose.connect(`${process.env.DB_CONNECTION}/${DBNAME}`)  // connection string COMPASS
+        const connectionString = await mongoose.connect(process.env.DB_CONNECTION)  // connection string ATLAS
         console.log(`Database connected with HOST..! ${connectionString.connection.host}`)  // to find host 
 
     } catch (error) {
         console.log(`Database connection error..! ${error}`)
-        console.log(`Database connecting with..! ${process.env.DB_CONNECTION}/${DBNAME}`)
+        console.log(`Database connecting with..! ${process.env.DB_CONNECTION}`)
     }
 }
 
