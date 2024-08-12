@@ -1,11 +1,14 @@
 import { connectionDB } from './db/db.js';
-import dotenv from "dotenv";
-dotenv.config({
-    path: '.env'
-});
+// import dotenv from "dotenv";
+// dotenv.config({
+//     path: '.env'
+// });
+
+import bodyParser from 'body-parser';
 
 import express from 'express'
 const server = express(); // Creating the server by express
+server.use(bodyParser())
 
 // create indirect routs by router() middleware 
 const routes = express.Router();

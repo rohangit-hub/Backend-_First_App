@@ -14,5 +14,7 @@ git push -u origin main
 git add .
 git commit -m "first commit"
 git push
+  or
+git push -f  -----> Push Forcefully
 
 ******* NOTES *********

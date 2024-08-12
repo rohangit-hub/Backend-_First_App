@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     firstName : {type: String , require : [true, "please enter the first name"] },
     lastName : {type: String , require : [true, "please enter the last name"] },
-    email : {type: String , require : [true, "please enter the email"], unique:true },
+    email : {type: String , require : [true, "please enter the email"] },
     age : {type: Number},
     city : {type: String},
     address : {type: String},
