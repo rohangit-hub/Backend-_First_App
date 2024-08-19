@@ -1,10 +1,8 @@
 import { connectionDB } from './db/db.js';
-// import dotenv from "dotenv";
-// dotenv.config({
-//     path: '.env'
-// });
-
 import bodyParser from 'body-parser';
+
+// Importing routes function form routes.routes.js
+import routesFunction from './routs/routs.js'
 
 import express from 'express'
 const server = express(); // Creating the server by express
@@ -14,20 +12,19 @@ server.use(bodyParser())
 const routes = express.Router();
 server.use("/api/v1",routes);
 
-// Importing routes function form routes.routes.js
-import routesFunction from './routs/routs.js'
-
+// authentication 
+import passport from './auth.js';
+server.use(passport.initialize())
+const auth = passport.authenticate('local',{session: false})
 
 // ALL METHOD OF ROUTES (GET, POST, DELETE, PUT, PATCH)
 routes.get("/get",routesFunction.get)
-
 routes.post("/post",routesFunction.post)
-
-
 routes.delete("/delete",routesFunction.del)
-routes.put("/put",routesFunction.put)
-routes.patch("/patch",routesFunction.patch)
 
+routes.put("/put", auth , routesFunction.put)
+
+routes.patch("/patch",routesFunction.patch)
 
 
 

@@ -8,8 +8,9 @@ const userSchema = new mongoose.Schema({
     age : {type: Number},
     city : {type: String},
     address : {type: String},
-    work: {type: String , enum : ["chef", 'waiter', 'manager'] , require : true}
-
+    username:{type:String, require:true, unique:true},
+    password:{type:String, require:true, unique:true},
+    work: {type: String , enum : ["chef", 'waiter', 'manager'] , require : [true, "please enter "]}
 });
 
 // Modal 

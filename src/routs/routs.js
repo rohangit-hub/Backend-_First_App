@@ -1,6 +1,5 @@
 // Creating Routs function in this file and exporting to other 
 import {userData} from '../models/userData.js'
-import bodyParser from 'body-parser';
 
 
 // GET
@@ -21,7 +20,7 @@ const post = async (req,res)=>{
     // user.address  ="sahatwar ballia",
     // user.work ="manager"
     // user.save()
-    console.log("user data", user)
+    // console.log("user data", user)
     await user.save()
     .then((user)=>{
         res.json(user)
